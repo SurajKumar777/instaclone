@@ -7,4 +7,8 @@ final class LoginInitial extends LoginState {}
 
 final class LoginSuccess extends LoginState {}
 
-final class LoginError extends LoginState {}
+final class LoginError extends LoginState {
+  final String errorMessage;
+
+  LoginError(this.errorMessage);
+}

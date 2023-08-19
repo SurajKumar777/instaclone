@@ -55,10 +55,9 @@ class _LoginState extends State<Login> {
                 context, "/home", (route) => false);
           }
           if (state is LoginError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("There is an error")));
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text(state.errorMessage)));
           }
-          // TODO: implement listener
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

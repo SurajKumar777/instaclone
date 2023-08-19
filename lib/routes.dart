@@ -13,7 +13,7 @@ class Routes {
       case "/login":
         return MaterialPageRoute(builder: (context) => const Login());
       case "/home":
-        return MaterialPageRoute(builder: (context) => const Home());
+        return MaterialPageRoute(builder: (context) => Home());
       default:
         return null;
     }
