@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:instagram/screens/home.dart';
 import 'package:instagram/screens/login.dart';

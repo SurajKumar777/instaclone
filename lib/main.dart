@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           create: (context) => LoginCubit(),
         ),
         BlocProvider(
-          create: (context) => HomeBloc(),
+          create: (context) => HomeBloc()..add(HomeBarClickedEvent(0)),
         ),
       ],
       child: MaterialApp(
