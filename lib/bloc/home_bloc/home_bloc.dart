@@ -5,9 +5,9 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeInitial()) {
+  HomeBloc() : super(HomeState(0)) {
     on<HomeBarClickedEvent>((event, emit) {
-      emit(HomeBarIndex(index: event.index));
+      emit(HomeState(event.index));
     });
   }
 }

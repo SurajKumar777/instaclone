@@ -1,12 +1,11 @@
 part of 'home_bloc.dart';
 
-@immutable
-sealed class HomeState {}
+class HomeState {
+  final index;
 
-final class HomeInitial extends HomeState {}
+  HomeState(this.index);
+}
 
-final class HomeBarIndex extends HomeState {
-  final int index;
-
-  HomeBarIndex({this.index = 0});
+final class HomeInitial extends HomeState {
+  HomeInitial(super.index);
 }

@@ -64,7 +64,7 @@ class _LoginState extends State<Login> {
           child: Column(
             children: [
               CustomText(text: "English (india)"),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               SizedBox(
@@ -74,11 +74,11 @@ class _LoginState extends State<Login> {
                     "assets/icons/instagram.png",
                     fit: BoxFit.cover,
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   border: Border.all(color: _emailBorderColor),
                   borderRadius: BorderRadius.circular(4),
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                               onPressed: () {
                                 emailController.clear();
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.close,
                                 color: Colors.black,
                               ))
@@ -101,15 +101,15 @@ class _LoginState extends State<Login> {
                       // hintText: "Username, email address or mobile number",
                       border: InputBorder.none,
                       labelText: "Username, email address or mobile number",
-                      floatingLabelStyle: TextStyle(color: Colors.black),
-                      labelStyle: TextStyle(color: Colors.grey)),
+                      floatingLabelStyle: const TextStyle(color: Colors.black),
+                      labelStyle: const TextStyle(color: Colors.grey)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   border: Border.all(color: _passwordBorderColor),
                   borderRadius: BorderRadius.circular(4),
@@ -126,7 +126,7 @@ class _LoginState extends State<Login> {
                                   isSecureSelected = !isSecureSelected;
                                 });
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.privacy_tip,
                                 color: Colors.black,
                               ))
@@ -135,11 +135,11 @@ class _LoginState extends State<Login> {
                       // hintText: "Username, email address or mobile number",
                       border: InputBorder.none,
                       labelText: "Password",
-                      floatingLabelStyle: TextStyle(color: Colors.black),
-                      labelStyle: TextStyle(color: Colors.grey)),
+                      floatingLabelStyle: const TextStyle(color: Colors.black),
+                      labelStyle: const TextStyle(color: Colors.grey)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               GestureDetector(
@@ -152,14 +152,14 @@ class _LoginState extends State<Login> {
                   width: MediaQuery.of(context).size.width,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomText(
                 text: "Forgotten Password?",
                 bold: true,
               ),
-              Spacer(),
+              const Spacer(),
               CustomButton(
                 text: "Create new account",
                 isBorder: true,
