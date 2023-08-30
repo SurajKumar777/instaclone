@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/bloc/home_bloc/home_bloc.dart';
-import 'package:instagram/bloc/login_cubit/login_cubit.dart';
-import 'package:instagram/routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:instagram/bloc/login_cubit/login_cubit.dart';
+import 'package:instagram/cubits/home_cubit/home_cubit.dart';
+import 'package:instagram/routes.dart';
+
+import 'cubits/landing_cubit/landing_page_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
           create: (context) => LoginCubit(),
         ),
         BlocProvider(
-          create: (context) => HomeBloc()..add(HomeBarClickedEvent(0)),
+          create: (context) => LandingPageCubit(),
+        ),
+        BlocProvider(
+          create: (context) => HomeCubit()..onInitialTimer(),
         ),
       ],
       child: MaterialApp(

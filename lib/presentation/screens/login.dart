@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram/bloc/login_cubit/login_cubit.dart';
 import 'package:instagram/constants/colors.dart';
-import 'package:instagram/screens/home.dart';
-import 'package:instagram/widgets/CustomButton.dart';
-import 'package:instagram/widgets/CustomInput.dart';
-import 'package:instagram/widgets/custom_text.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:instagram/presentation/widgets/CustomButton.dart';
+import 'package:instagram/presentation/widgets/custom_text.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -18,13 +16,14 @@ class _LoginState extends State<Login> {
   bool isEmailSelected = false;
   bool isPasswordSelected = false;
   bool isSecureSelected = false;
-  FocusNode _emailFocusNode = FocusNode();
-  FocusNode _passwordFocusNode = FocusNode();
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
   Color _emailBorderColor = Colors.grey;
   Color _passwordBorderColor = Colors.grey;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  @override
   void initState() {
     super.initState();
     // Change color for border if focus was changed

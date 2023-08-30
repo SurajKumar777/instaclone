@@ -4,6 +4,7 @@ class CustomText extends StatelessWidget {
   final String text;
   final double size;
   final bool bold;
+  final bool isUnderline;
   Color color;
   CustomText({
     super.key,
@@ -11,6 +12,7 @@ class CustomText extends StatelessWidget {
     this.size = 12.0,
     this.bold = false,
     this.color = Colors.black,
+    this.isUnderline = false,
   });
 
   @override
@@ -21,6 +23,7 @@ class CustomText extends StatelessWidget {
         color: color,
         fontSize: size,
         fontWeight: bold == true ? FontWeight.bold : null,
+        decoration: isUnderline ? TextDecoration.underline : null,
       ),
     );
   }

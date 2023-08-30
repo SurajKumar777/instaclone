@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram/bloc/home_bloc/home_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram/screens/home_screen.dart';
-import 'package:instagram/screens/post_screen.dart';
-import 'package:instagram/screens/profile_screen.dart';
-import 'package:instagram/screens/reel_screen.dart';
-import 'package:instagram/screens/search_screen.dart';
+import 'package:instagram/presentation/screens/home_screen.dart';
+import 'package:instagram/presentation/screens/post_screen.dart';
+import 'package:instagram/presentation/screens/profile_screen.dart';
+import 'package:instagram/presentation/screens/reel_screen.dart';
+import 'package:instagram/presentation/screens/search_screen.dart';
 
-class Home extends StatelessWidget {
-  Home({super.key});
+import '../../cubits/landing_cubit/landing_page_cubit.dart';
+
+class LandingPage extends StatelessWidget {
+  LandingPage({super.key});
 
   List<Widget> screens = [
     const HomeScreen(),
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
+    return BlocBuilder<LandingPageCubit, LandingPageState>(
       builder: (context, state) {
         return Scaffold(
           appBar: state.index == 0
@@ -30,20 +31,22 @@ class Home extends StatelessWidget {
                     "assets/images/Logo-Instagram.png",
                     width: MediaQuery.of(context).size.width * 0.3,
                   ),
-                  actions: const [
+                  actions: [
                     IconButton(
-                        onPressed: null,
-                        icon: Icon(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/notification");
+                        },
+                        icon: const Icon(
                           CupertinoIcons.heart,
                           color: Colors.black,
                         )),
-                    IconButton(
+                    const IconButton(
                         onPressed: null,
                         icon: Icon(
                           CupertinoIcons.paperplane,
                           color: Colors.black,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     )
                   ],
@@ -57,7 +60,7 @@ class Home extends StatelessWidget {
               indicatorColor: Colors.white,
               elevation: 0,
               onDestinationSelected: (int i) {
-                context.read<HomeBloc>().add(HomeBarClickedEvent(i));
+                context.read<LandingPageCubit>().onTabClicked(i);
               },
               selectedIndex: state.index,
               destinations: const <NavigationDestination>[

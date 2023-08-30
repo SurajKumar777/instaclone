@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:instagram/constants/colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -10,7 +9,7 @@ class CustomButton extends StatelessWidget {
   final Color borderColor;
   final bool isBorder;
   final double textSize;
-  CustomButton({
+  const CustomButton({
     super.key,
     required this.text,
     this.width = 200,

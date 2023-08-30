@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class CustomInput extends StatelessWidget {
-  final String prifixIcon;
+  final Widget? prifixIcon;
+  final Widget? suffixIcon;
   final String hintText;
   final bool isNum;
   final bool isSecure;
@@ -17,6 +16,7 @@ class CustomInput extends StatelessWidget {
     this.isNum = false,
     this.isSecure = false,
     required this.validation,
+    this.suffixIcon,
   });
 
   @override
@@ -26,12 +26,7 @@ class CustomInput extends StatelessWidget {
       keyboardType: isNum ? TextInputType.phone : TextInputType.text,
       obscureText: isSecure,
       decoration: InputDecoration(
-        hintText: hintText,
-        prefixIcon: Image.asset(
-          prifixIcon,
-          scale: 5,
-        ),
-      ),
+          hintText: hintText, prefixIcon: prifixIcon, suffixIcon: suffixIcon),
       validator: validation,
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
